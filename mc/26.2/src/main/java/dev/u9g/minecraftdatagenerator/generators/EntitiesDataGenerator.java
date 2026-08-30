@@ -17,6 +17,7 @@ import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ambient.AmbientCreature;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.fish.WaterAnimal;
+import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.projectile.Projectile;
 
@@ -101,6 +102,10 @@ public class EntitiesDataGenerator implements IDataGenerator {
         }
         if (AmbientCreature.class.isAssignableFrom(entityClass)) {
             return "ambient";
+        }
+
+        if (Enemy.class.isAssignableFrom(entityClass)) {
+            return "mob";
         }
 
         //Second level classifications. PathAwareEntity is not included because it
